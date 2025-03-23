@@ -4,7 +4,7 @@ export default function WhyChooseBatch() {
   return (
     <div className="mt-24">
       <h3 className="text-4xl font-kalice text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-pitt-blue to-pitt-gold">
-        Why Choose Batch?
+        Why Choose P2P?
       </h3>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

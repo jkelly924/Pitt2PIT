@@ -6,7 +6,7 @@ export default function HowItWorks() {
     <section className="bg-white py-24 px-4">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-kalice text-center mb-16 text-pitt-blue">
-          How Batch Works
+          How P2P Works
         </h2>
 
         <div className="grid md:grid-cols-3 gap-12 md:gap-8">

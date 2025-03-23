@@ -12,7 +12,7 @@ export default function HeroSection() {
           </h1>
 
           <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-5xl tracking font-kalice text-pitt-gold">
-            Batch your ride with verified Pitt2PIT students
+            Split your ride with other Pitt students
           </h2>
 
           <div className="max-w-2xl mx-auto">

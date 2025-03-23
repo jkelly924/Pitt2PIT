@@ -27,7 +27,7 @@ export default function ComparisonTable() {
             </thead>
             <tbody>
               <tr className="border-b bg-pitt-gold/20 hover:bg-pitt-gold/30">
-                <td className="p-2 sm:p-4 text-xs sm:text-base font-bold text-pitt-blue">Batch</td>
+                <td className="p-2 sm:p-4 text-xs sm:text-base font-bold text-pitt-blue">P2P</td>
                 <td className="p-2 sm:p-4 text-xs sm:text-base">$9 - $20</td>
                 <td className="p-2 sm:p-4 text-xs sm:text-base">25 Minutes</td>
                 <td className="p-2 sm:p-4 text-xs sm:text-base">
@@ -39,7 +39,7 @@ export default function ComparisonTable() {
                 <td className="p-2 sm:p-4 text-xs sm:text-base font-bold">
                   Uber
                   <span className="text-[10px] sm:text-sm text-gray-500">
-                    (without batch)
+                    (without P2P)
                   </span>
                 </td>
                 <td className="p-2 sm:p-4 text-xs sm:text-base">$35 - $80</td>

@@ -8,13 +8,13 @@ export default function Header() {
       <div className="flex h-12 sm:h-14 justify-between items-center w-full mt-2 sm:mt-3 px-4 sm:px-8">
         <Link href="/" className="flex items-center font-kalice text-lg sm:text-xl text-white">
           <Image
-            src="/images/batch-logo.png"
-            alt="Batch Logo"
+            src="/images/p2p_logo.svg"
+            alt="Pitt2PIT Logo"
             width={32}
             height={32}
-            className="w-6 h-6 sm:w-8 sm:h-8 hover:opacity-80 transition-opacity"
+            className="w-6 h-6 sm:w-8 sm:h-8 hover:opacity-80 transition-opacity invert"
           />
-          &nbsp; Batch
+          &nbsp; Pitt2PIT
         </Link>
         <div className="flex items-center gap-2 sm:gap-4">
           <Button variant="outline" className="font-geist-sans text-sm sm:text-base border-pitt-gold text-pitt-gold hover:bg-pitt-gold hover:text-pitt-blue">
