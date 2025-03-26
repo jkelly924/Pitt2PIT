@@ -10,7 +10,10 @@ Pitt2PIT is a website/app designed to help University of Pittsburgh students coo
 ## Features  
 - Find and connect with other Pitt students heading to the airport  
 - Split rideshare costs to save money  
-- Easy-to-use interface for coordinating travel plans  
+- Easy-to-use interface for coordinating travel plans
+
+
+To contribute: go [Here](https://github.com/LiamBrem/Pitt2PIT/blob/main/CONTRIBUTING.md)
 
 
 **Making airport rides easier—together!**
