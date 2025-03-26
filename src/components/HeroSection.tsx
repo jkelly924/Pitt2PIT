@@ -18,6 +18,7 @@ export default function HeroSection() {
           <div className="max-w-2xl mx-auto">
             <div className="sm:mt-4 md:mt-8 p-6 md:p-8 rounded-3xl bg-white shadow-xl transition-all duration-300 md:text-lg text-sm">
               <div className="space-y-5">
+                
                 <div className="space-y-4">
                   <Button
                     variant="outline"
