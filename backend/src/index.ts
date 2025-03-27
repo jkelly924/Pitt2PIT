@@ -1,4 +1,4 @@
-import express, { Express, Request, Response } from 'express';
+import express, { Express, Request, Response, RequestHandler } from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import prisma from './lib/prisma';
@@ -46,34 +46,33 @@ app.post('/users', async (req: Request, res: Response) => {
   }
 });
 
-// Post routes
-app.get('/posts', async (req: Request, res: Response) => {
+// Time request routes
+app.post('/time-requests', (async (req: Request, res: Response) => {
   try {
-    const posts = await prisma.post.findMany({
-      include: { author: true },
-    });
-    res.json(posts);
-  } catch (error) {
-    console.error('Error fetching posts:', error);
-    res.status(500).json({ error: 'Failed to fetch posts' });
-  }
-});
+    const { userId, date, startTime, endTime } = req.body;
+    
+    // Validate the input
+    if (!userId || !date || !startTime || !endTime) {
+      return res.status(400).json({ error: 'Missing required fields' });
+    }
 
-app.post('/posts', async (req: Request, res: Response) => {
-  try {
-    const { title, content, authorId } = req.body;
-    const post = await prisma.post.create({
-      data: { title, content, authorId },
-      include: { author: true },
+    // Create the time request
+    const timeRequest = await prisma.timeRequest.create({
+      data: {
+        userId,
+        date: new Date(date),
+        startTime: new Date(startTime),
+        endTime: new Date(endTime),
+      },
     });
-    res.json(post);
-  } catch (error) {
-    console.error('Error creating post:', error);
-    res.status(500).json({ error: 'Failed to create post' });
-  }
-});
 
-// Start server
+    res.json(timeRequest);
+  } catch (error: any) {
+    console.error('Error creating time request:', error);
+    res.status(500).json({ error: 'Failed to create time request', details: error.message });
+  }
+}) as RequestHandler);
+
 app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
-}); 
+  console.log(`Server is running on http://localhost:${port}`);
+});
