@@ -24,6 +24,7 @@ app.get('/users', async (req: Request, res: Response) => {
     const users = await prisma.user.findMany();
     res.json(users);
   } catch (error) {
+    console.error('Error fetching users:', error);
     res.status(500).json({ error: 'Failed to fetch users' });
   }
 });
@@ -31,12 +32,17 @@ app.get('/users', async (req: Request, res: Response) => {
 app.post('/users', async (req: Request, res: Response) => {
   try {
     const { email, name } = req.body;
+    console.log('Creating user with data:', { email, name });
+    
     const user = await prisma.user.create({
       data: { email, name },
     });
+    
+    console.log('User created successfully:', user);
     res.json(user);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to create user' });
+  } catch (error: any) {
+    console.error('Error creating user:', error);
+    res.status(500).json({ error: 'Failed to create user', details: error.message });
   }
 });
 
@@ -48,6 +54,7 @@ app.get('/posts', async (req: Request, res: Response) => {
     });
     res.json(posts);
   } catch (error) {
+    console.error('Error fetching posts:', error);
     res.status(500).json({ error: 'Failed to fetch posts' });
   }
 });
@@ -61,6 +68,7 @@ app.post('/posts', async (req: Request, res: Response) => {
     });
     res.json(post);
   } catch (error) {
+    console.error('Error creating post:', error);
     res.status(500).json({ error: 'Failed to create post' });
   }
 });
